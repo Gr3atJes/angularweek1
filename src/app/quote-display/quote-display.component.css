@@ -1,0 +1,12 @@
+.carousel-caption{
+    color: #fff;
+    top: 30%;
+  }
+
+.card{
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.card-text{
+  color: #000;
+}

@@ -1,0 +1,17 @@
+<div class="card-body">
+    <p><i class="fas fa-quote-left"></i> {{ displayQuote.quoteText }} <i class="fas fa-quote-right"></i>
+    </p>
+    <cite>-{{ displayQuote.quoter }}</cite>
+  </div>
+  <div class="card-footer">
+    <div class="ratings" style="float: left">
+      <i class="far fa-thumbs-up" (click)="onLike()"></i>
+      {{ displayQuote.likeCount }}
+      <i class="far fa-thumbs-down" (click)="onDislike()"></i>
+      {{ displayQuote.dislikeCount }}
+    </div>
+    <div style="float: right">
+      <i style="margin-bottom: 20px" class="far fa-trash-alt fa-lg" (click)="deleteQuote(true)"></i>
+    </div>
+  
+  </div>

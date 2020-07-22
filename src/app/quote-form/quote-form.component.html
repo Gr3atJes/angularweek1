@@ -1,0 +1,25 @@
+<div *ngIf="hideForm" class="button-wrapper">
+    <button type="button" class="btn btn-outline-light btn-lg" (click)="revealForm()">Post Your Quote</button>
+  </div>
+  <div *ngIf="showForm" class="container">
+    <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
+      <div class="form-group">
+        <label for="submitter">Submitter:</label>
+        <input type="text" class="form-control" [(ngModel)]="newQuote.submitter" #submitter="ngModel" name="submitter" id="submitter" required>
+        <small [hidden]="submitter.valid || submitter.pristine" class="form-text text-muted">Submitter Name is Required</small>
+      </div>
+      <div class="form-group">
+        <label for="quoter">Author:</label>
+        <input type="text" class="form-control" [(ngModel)]="newQuote.quoter" #quoter="ngModel" name="quoter" id="quoter" required>
+        <small [hidden]="quoter.valid || quoter.pristine" class="form-text text-muted">Author Name is Required</small>
+      </div>
+      <div class="form-group">
+        <label for="quote">Quote:</label>
+        <input type="text" class="form-control" [(ngModel)]="newQuote.quoteText" #quoteText="ngModel" name="quoteText" id="quoteText" required>
+        <small [hidden]="quoteText.valid || quoteText.pristine" class="form-text text-muted">Quote is Required</small>
+      </div>
+      <div class="post-quote">
+        <button type="submit" class="btn btn-outline-light" [disabled]="!quoteForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>

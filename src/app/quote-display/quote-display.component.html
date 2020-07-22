@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 py-3">
+        <ngb-carousel *ngIf="displayQuotes">
+          <ng-template ngbSlide *ngFor="let displayQuote of displayQuotes; index as i">
+            <img [src]="img" alt="Random slide">
+            <div class="carousel-caption">
+              <div topQuote *ngIf="displayQuote.likeCount > 0" class="card">
+                <div class="card-header">
+                  <h1><span>Submission by:</span>{{ displayQuote.submitter }}</h1>
+                  <small>{{ displayQuote.postDate | lastPosted }}</small><br>
+                  <i (click)="toggleQuote(i)" class="fas fa-2x" [class.fa-angle-down]="onMore"
+                    [class.fa-angle-up]="onLess"></i>
+                </div>
+                <quote-reveal *ngIf="displayQuote.showQuoteInFull" [fullQuote]="displayQuote"
+                  (get-rid)="deleteSelectedQuote($event, i)"></quote-reveal>
+              </div>
+              <div *ngIf="displayQuote.likeCount == 0" class="card">
+                <div class="card-header">
+                  <h1>Submission by: {{ displayQuote.submitter }}</h1>
+                  <small>{{ displayQuote.postDate | lastPosted }}</small><br>
+                  <i (click)="toggleQuote(i)" class="fas fa-2x" [class.fa-angle-down]="onMore"
+                    [class.fa-angle-up]="onLess"></i>
+                </div>
+                <quote-reveal *ngIf="displayQuote.showQuoteInFull" [fullQuote]="displayQuote"
+                  (get-rid)="deleteSelectedQuote($event, i)"></quote-reveal>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+  <quote-form (addQuote)="addNewQuote($event)"></quote-form>
