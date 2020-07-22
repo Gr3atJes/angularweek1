@@ -1,3 +1,16 @@
+<<<<<<< HEAD
 <page-header></page-header>
 <main-display></main-display>
 <page-footer></page-footer>
+=======
+<div>
+  <h1>My Goals</h1>
+  <hr>
+  <ul>
+      <li *ngFor='let goal of goals'>
+        {{goal.name}}
+      </li>
+  </ul>
+  <p *ngIf='goals.length > 5'>Your goals are too many</p>
+</div>
+>>>>>>> 9dc9aa19d2b9f2493e6701f65513865f4e6cdd14
