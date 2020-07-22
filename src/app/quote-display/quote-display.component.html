@@ -17,7 +17,7 @@
               </div>
               <div *ngIf="displayQuote.likeCount == 0" class="card">
                 <div class="card-header">
-                  <h1>Submission posted by !: {{ displayQuote.submitter }}</h1>
+                  <h1>Submission recently posted by !: {{ displayQuote.submitter }}</h1>
                   <small>{{ displayQuote.postDate | lastPosted }}</small><br>
                   <i (click)="toggleQuote(i)" class="fas fa-2x" [class.fa-angle-down]="onMore"
                     [class.fa-angle-up]="onLess"></i>
