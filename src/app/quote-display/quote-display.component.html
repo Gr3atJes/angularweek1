@@ -7,7 +7,7 @@
             <div class="carousel-caption">
               <div topQuote *ngIf="displayQuote.likeCount > 0" class="card">
                 <div class="card-header">
-                  <h1><span>Submission by:</span>{{ displayQuote.submitter }}</h1>
+                  <h1><span>Submission  posted By !:</span>{{ displayQuote.submitter }}</h1>
                   <small>{{ displayQuote.postDate | lastPosted }}</small><br>
                   <i (click)="toggleQuote(i)" class="fas fa-2x" [class.fa-angle-down]="onMore"
                     [class.fa-angle-up]="onLess"></i>
@@ -17,7 +17,7 @@
               </div>
               <div *ngIf="displayQuote.likeCount == 0" class="card">
                 <div class="card-header">
-                  <h1>Submission by: {{ displayQuote.submitter }}</h1>
+                  <h1>Submission posted by !: {{ displayQuote.submitter }}</h1>
                   <small>{{ displayQuote.postDate | lastPosted }}</small><br>
                   <i (click)="toggleQuote(i)" class="fas fa-2x" [class.fa-angle-down]="onMore"
                     [class.fa-angle-up]="onLess"></i>
